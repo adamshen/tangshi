@@ -4,12 +4,12 @@ require "pry"
 
 module Tangshi
   class Poet < ActiveRecord::Base
-    establish_connection :adapter => "sqlite3", :database => "db/tangshi.sqlite"
+    establish_connection :adapter => "sqlite3", :database => File.expand_path('../db/tangshi.sqlite', __FILE__)
 
     has_many :poetries
   end
   class Poetry < ActiveRecord::Base
-    establish_connection :adapter => "sqlite3", :database => "db/tangshi.sqlite"
+    establish_connection :adapter => "sqlite3", :database =>File.expand_path('../db/tangshi.sqlite', __FILE__)
 
     belongs_to :poet
 
